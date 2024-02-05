@@ -12,8 +12,7 @@
 		var images = [], x = 0;
 images[0] = "img/MaddyTEOC.png";
 images[1] = "img/MaddyMILK.png";
-var x = 0;
-$(document).keypress(function(e){ 
+$(document).keypress(function(e)){ 
     if (e.key == 0x91){
         var img = document.getElementById("teoc");
     	img.src = images[(x + 1) % 2];
