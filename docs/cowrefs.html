@@ -8,6 +8,17 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/font.css">
     <script src="js/ktane-utils.js"></script>
+	<script>
+		var images = [], x = 0;
+images[0] = "MaddyTEOC.png";
+images[1] = "MaddyMILK.png";
+var x = 0;
+$(document).keypress(function(e){ 
+    if (e.key == 87){
+        var img = document.getElementById("teoc");
+    	img.src = images[(x + 1) % 2];
+    }
+</script>  
 
 	<title>Madeline Galaxi!</title>
 	<meta content="Maddy's Extended Bio!" property="og:title" />
@@ -29,7 +40,7 @@
 			<p>The further up and left, the more I'd prefer you reference off of it!</p>
 			<p>I'd prefer her to be digitigrade, by the way,</p>
 		  <center>
-			  <img src="img/MaddyTEOC.png" title="Art credit goes to TeocPerfectForm!" style="width:160px;">
+			  <img id="teoc" src="img/MaddyTEOC.png" title="Art credit goes to TeocPerfectForm!" style="width:160px;">
           <img src="img/Cowvoid.png" title="Art credit goes to Mooflettes!" style="width:160px;">
     
    <p><a href="index.html">Take me back to the main page.</a></p>
