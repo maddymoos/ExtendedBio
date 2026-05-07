@@ -14,6 +14,11 @@
 	<meta content="My extended bio! Has Void's refs and other nice information about me inside!" property="og:description" />
 	<meta content="https://cooldoom5.github.io/ExtendedBio/img/Void_3.png" property="og:image" />
 	<meta content="#2B1E38" data-react-helmet="true" name="theme-color" />
+	<style>
+	table, th, td {
+  border: 0px solid black;
+	}
+	</style>
 	<script>
 		window.addEventListener('DOMContentLoaded', () =>
             {
@@ -105,10 +110,19 @@
 					'Potion of Burpiness',
 					'Causes the drinker to become very burpy. Their belly somewhat fills with gas, as they burp a lot. Over the course of 10 minutes, their belly bloats more as their burps get more intense.',
 					
+					'Potion of Slimes',
+					'Causes the drinker to be filled with more and more slimes. They fill the drinker\'s body ove the course of 5 minutes. The slimes squirm a lot, until being laid like an egg.',
+					
                 ];
 				let mods = [
 				    //fillers, to make modifiers rarer
                     '',
+					'',
+					
+					'',
+					'',
+					
+					'',
 					'',
 					
 					'',
@@ -131,16 +145,115 @@
 					
 					'Extreme',
 					'The potion\'s effect applies to an absurd degree. The effect of the potion is around 5 times as intense as a normal potion, all happening at once.',
+					
+					'Stimulating',
+					'The potion\'s effect applies while the drinker is touched, especially in the area affected. Potion lingers for much longer.',
+					
+					'Blushy',
+					'The potion\'s effect applies when the drinker blushes, acting more intensely the more the drinker blushes. Potion lingers for much longer.',
                 ];
+				console.log(potions.length / 2);
 				let p = Math.floor(Math.random() * (potions.length / 2))
+				console.log("p = " + p);
 				let m = Math.floor(Math.random() * (mods.length / 2))
-
+				
+				document.getElementsByClassName('img1')[0].src = "img/pot/" + p + ".png";
                 document.getElementsByClassName('potionname')[0].innerText = potions[2*p | 0];
 				document.getElementsByClassName('potioneffect')[0].innerText = potions[2*p + 1 | 0];
-				if(p < 23 || p > 26)
+				if(p < 22|| p > 25)
 				{
-				document.getElementsByClassName('mod')[0].innerText = mods[2*m | 0];
-				document.getElementsByClassName('modeffect')[0].innerText = mods[2*m + 1 | 0];
+					if(Math.random() > .5)
+					{
+						let pp = Math.floor(Math.random() * (potions.length / 2))
+						if(pp == p || (pp < 25 && pp > 22))
+						{
+											document.getElementsByClassName("pot2")[0].remove();
+											document.getElementsByClassName("pot3")[0].remove();
+
+											document.getElementsByClassName("pot4")[0].remove();
+												return;						
+
+						}
+						document.getElementsByClassName('potionname2')[0].innerText = potions[2*pp | 0];
+						document.getElementsByClassName('potioneffect2')[0].innerText = potions[2*pp + 1 | 0];
+						if(pp < 22 || pp > 25)
+						{
+							if(Math.random() > .66666)
+					{
+						let ppp = Math.floor(Math.random() * (potions.length / 2))
+						if(ppp == pp || ppp == p || (ppp < 25 && ppp > 22))
+						{
+											document.getElementsByClassName("pot3")[0].remove();
+
+											document.getElementsByClassName("pot4")[0].remove();
+												return;						
+
+						}
+						document.getElementsByClassName('potionname3')[0].innerText = potions[2*ppp | 0];
+						document.getElementsByClassName('potioneffect3')[0].innerText = potions[2*ppp + 1 | 0];
+						if(ppp < 22 || ppp > 25)
+						{
+							if(Math.random() > .75)
+					{
+						let pppp = Math.floor(Math.random() * (potions.length / 2))
+						if(pppp == ppp || pppp == pp || pppp == p || (pppp < 22 && pppp > 25))
+						{
+											document.getElementsByClassName("pot4")[0].remove();
+
+												return;
+
+						}
+						document.getElementsByClassName('potionname4')[0].innerText = potions[2*pppp | 0];
+						document.getElementsByClassName('potioneffect4')[0].innerText = potions[2*pppp + 1 | 0];
+						if(pppp < 22 || pppp > 25)
+						{
+							document.getElementsByClassName('mod')[0].innerText = mods[2*m | 0];
+							document.getElementsByClassName('modeffect')[0].innerText = mods[2*m + 1 | 0];
+						}
+					}
+					else
+					{
+					document.getElementsByClassName("pot4")[0].remove();
+					document.getElementsByClassName('mod')[0].innerText = mods[2*m | 0];
+					document.getElementsByClassName('modeffect')[0].innerText = mods[2*m + 1 | 0];
+					}
+						}
+						else
+						{
+						document.getElementsByClassName("pot4")[0].remove();
+						}
+						
+
+						
+					}
+					else
+					{
+					document.getElementsByClassName("pot3")[0].remove();
+					document.getElementsByClassName("pot4")[0].remove();
+					document.getElementsByClassName('mod')[0].innerText = mods[2*m | 0];
+					document.getElementsByClassName('modeffect')[0].innerText = mods[2*m + 1 | 0];
+					}
+						}
+												else
+						{
+							document.getElementsByClassName("pot3")[0].remove();
+							document.getElementsByClassName("pot4")[0].remove();
+						}
+					}
+					else
+					{
+					document.getElementsByClassName("pot2")[0].remove();
+					document.getElementsByClassName("pot3")[0].remove();
+					document.getElementsByClassName("pot4")[0].remove();
+					document.getElementsByClassName('mod')[0].innerText = mods[2*m | 0];
+					document.getElementsByClassName('modeffect')[0].innerText = mods[2*m + 1 | 0];
+					}
+				}
+				else
+				{
+					document.getElementsByClassName("pot2")[0].remove();
+					document.getElementsByClassName("pot3")[0].remove();
+					document.getElementsByClassName("pot4")[0].remove();
 				}
             });
 	</script>
@@ -157,9 +270,42 @@
                     <p class="flavour-text">[One Serving : One Cup of Potion]</p>
 					<br>
 					<center>
-					<h1 class="potionname"></h1>
-					<p class="potioneffect"></p>
-					<br>
+					<table class="pot1" width="100%" >
+					<tr>
+						<td width = "75%"><center><h1 class="potionname"></h1></center></td>
+						<td><center><image class="img1" width="100px" src="img/pot/default.png"></image></center></td>
+					</tr>
+					<tr>
+						<td colspan="2"><center><p class="potioneffect"></p></center></td>
+					</tr>
+					</table>
+					<table class="pot2" width="100%" >
+					<tr>
+						<td width = "75%"><center><h1 class="potionname2"></h1></center></td>
+						<td><center><image class="img2" width="100px" src="img/pot/default.png"></image></center></td>
+					</tr>
+					<tr>
+						<td colspan="2"><center><p class="potioneffect2"></p></center></td>
+					</tr>
+					</table>
+					<table class="pot3" width="100%" >
+					<tr>
+						<td width = "75%"><center><h1 class="potionname3"></h1></center></td>
+						<td><center><image class="img3" width="100px" src="img/pot/default.png"></image></center></td>
+					</tr>
+					<tr>
+						<td colspan="2"><center><p class="potioneffect3"></p></center></td>
+					</tr>
+					</table>
+					<table class="pot4" width="100%" >
+					<tr>
+						<td width = "75%"><center><h1 class="potionname4"></h1></center></td>
+						<td><center><image class="img4" width="100px" src="img/pot/default.png"></image></center></td>
+					</tr>
+					<tr>
+						<td colspan="2"><center><p class="potioneffect4"></p></center></td>
+					</tr>
+					</table>
 					<h3 class="mod"></h3>
 					<p class="modeffect"></p>
 					</center>
