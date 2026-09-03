@@ -20,98 +20,126 @@
 	}
 	</style>
 	<script>
+	function restricted(a)
+	{
+		if(a == 22 || a == 23 || a == 24|| a == 25 ||a == 35 || a == 33)
+		return true;
+		return false;
+	}
 		window.addEventListener('DOMContentLoaded', () =>
             {
                 let potions = [
+				//1
                     'Potion of Boob Growth',
 					'Causes the drinker\'s boobs to swell in size significantly. As they grow, they become much sloshier. Usually, a drinker\'s boobs end up around three times their original size after 5 minutes.',
-					
+					//2
 					'Potion of Belly Growth',
 					'Causes the drinker\'s belly to swell in size significantly. As it grows, it grumbles a lot. Usually, a drinker\'s belly ends up around three times its original size after 5 minutes.',
-					
+					//3
 					'Potion of Udder Growth',
 					'Causes the drinker\'s udder to swell in size with milk. If the drinker doesn\'t already have one, they grow one. Can cause their udder to begin to leak as well, as it grows around three times its original size in 5 minutes.',
-					
+					//4
 					'Potion of Ball Growth',
 					'Causes the drinker\'s balls to grow a lot with cum. As they grow, they slosh a lot. The drinker\'s balls grow around five times their original size over about 5 minutes.',
-					
+					//5
 					'Potion of Nipple Growth',
 					'Causes the drinker\'s nipples to swell in size significantly. May also cause the drinker to leak milk. Usually, a drinker\'s nipples end up around three times their original size after 5 minutes.',
-					
+					//6
 					'Potion of Brain Drain',
 					'Causes the drinker to slowly lose their intellengence. The drinker\'s IQ decreases by 35 and their vocabulary is halved over 3 minutes.',
-					
+					//7
 					'Potion of Horniness',
 					'Causes the drinker to become far hornier than normal. This effect slowly intensifies over 2 minutes, persisting until they get relief.',
-					
+					//8
 					'Potion of Neediness',
 					'Influences the drinker to need immense pleasure. This effect slowly intensifies over 5 minutes, persisting for around an hour.',
-					
+					//9
 					'Potion of Hypersensitivity',
 					'The drinker\'s body becomes very sensitive to all touch and stimulation. Even the slightest graze could cause immense pleasure. Effect reaches its peak after only a minute, persisting for 30 minutes.',
-					
+					//10
 					'Potion of Moaning',
 					'The drinker becomes extremely compelled to moan from the slightest touch. Effects apply nigh immediately, and persist for an hour.',
-					
+					//11
 					'Potion of Hunger',
 					'The drinker feels extremely hungry, no matter how much food they eat. Can lead to extreme overeating and weight gain. Effect applies over 5 minutes.',
-					
+					//12
 					'Potion of Milk Production',
 					'The drinker\'s body starts to produce a lot of milk. Can cause leaking and swelling of the drinker\'s boobs. The drinker will produce around a gallon after 5 minutes.',
-					
+					//13
 					'Potion of Small Egg Oviposition',
 					'The drinker\'s heat fills with many small eggs over the course of 8 minutes. Once all of the eggs are inside them, the drinker feels an immense need to lay them all. The small eggs are easy to lay, especially in large numbers.',
-					
+					//14
 					'Potion of Large Egg Oviposition',
 					'The drinker\'s heat fills with many large eggs over the course of 5 minutes. Once all of the eggs are inside them, the drinker feels an immense need to lay them all. The large eggs are difficult to lay but are very pleasuring.',
-					
+					//15
 					'Potion of Cum Production',
 					'The drinker\'s body begins producing a lot of cum. This can result in growth of the balls or gock, and if unattended, can cause the drinker\'s gock to start to leak cum. Effect applies over 5 minutes.',
-					
+					//16
 					'Potion of Tentacles (Growth)',
 					'The drinker is surrounded by many tentacles, hoisting them in the air, teasing their body, before some penetrate any entrance they can find. They fill the drinker\'s body with fluid causing growth in their boobs, belly, etc. The tentacles stick around for about 20 minutes.',
-					
+					//17
 					'Potion of Tentacles (Eggs)',
 					'The drinker is surrounded by many tentacles, hoisting them in the air, teasing their body, before some penetrate the drinker\'s heat. They pump many eggs into the drinker. After the drinker is full of alien eggs, the tentacles depart.',
-					
+					//18
 					'Potion of Gock Growth (Girth)',
 					'The drinker\'s gock throbs after drinking the potion, getting girthier with every throb. Over the course of 3 minutes, their gock will become about three times as thick.',
-					
+					//19
 					'Potion of Gock Growth (Length)',
 					'The drinker\'s gock throbs after drinking the potion, getting longer with every throb. Over the course of 3 minutes, their gock will become about twice as long.',
-					
+					//20
 					'Potion of Extra Boobs',
 					'The drinker\'s body grows an extra pair of boobs. They slowly swell until they match the size of their other boobs. This usually takes 10 minutes.',
-					
+					//21
 					'Potion of Extra Gock',
 					'The drinker\'s body grows an extra gock. It slowly throbs and grows until it matches the size of their other gock(s). This usually takes 10 minutes.',
-					
+					//22
 					'Potion of Blueberry',
 					'The drinker\'s body slowly becomes blue, before filling with blueberry juice. This mainly affects the drinker\'s belly, with some filling their boobs as well, causing them to leak. Effect starts after a minute, applying over 5.',
-					
+					//23
 					'Potion of Slime Transformation',
 					'The drinker\'s body turns into slime, becoming translucent and goopy. This process takes 2 minutes, is very pleasurable, and makes the drinker much easier to pleasure.',
-					
+					//24
 					'Potion of Plushie Transformation',
 					'The drinker\'s body turns into a soft plush, causing them to become very soft and squishy. This somewhat overfills the drinker\'s belly and boobs as well. The transformation takes 2 minutes.',
-					
+					//25
 					'Potion of Pooltoy Transformation',
 					'The drinker\'s body turns into that of a poooltoy, causing them to fill with air. This allows others to puff into the drinker, causing them to grow larger - and eventually burst. The transformation takes 2 minutes.',
-					
+					//26
 					'Potion of Cow Transformation',
 					'The drinker\'s body turns fully into that of a cow. The drinker is filled with the immense need to be on all 4s, as their hands and feet turn fully into hooves. This process takes 5 minutes.',
-					
+					//27
 					'Potion of Tounge Growth',
 					'Causes the drinker\'s tounge to get much longer than usual. The dringer is filled with an urge to lick and pleasure others with it. Over 3 minutes, the drinker\'s tounge grows about four times as long.',
-					
+					//28
 					'Potion of Extra Tounge',
 					'The drinker\'s body grows an extra tounge. It quickly grows to match the size of the drinker\'s other tounge(s) over the course of a minute.',
-					
+					//29
 					'Potion of Burpiness',
 					'Causes the drinker to become very burpy. Their belly somewhat fills with gas, as they burp a lot. Over the course of 10 minutes, their belly bloats more as their burps get more intense.',
-					
+					//30
 					'Potion of Slimes',
 					'Causes the drinker to be filled with more and more slimes. They fill the drinker\'s body ove the course of 5 minutes. The slimes squirm a lot, until being laid like an egg.',
+					//31
+					'Potion of Size',
+					'Causes the drinker\'s entire body to scale in size, growing to become overall larger. Over the course of 5 minutes, the drinker scales to about double their original size.',
+					//32
+					'Potion of Thickness',
+					'After being drunk, the drinker\'s whole body grows thicker, every limb, every part. It can start at any part of the body, but spreads to all of them over about a minute, causing about triple thickness all around the drinker\'s body.',
+					//33
+					'Potion of Saliva',
+					'The drinker\'s body begins producing a lot more saliva than usual. This can lead to a lot of drooling, especially if the drinker is moaning a lot. Effect intensifies over 5 minutes, and lasts for an hour.',
+					//34
+					'Potion of Tailmaw',
+					'The drinker\'s tail (forming one if they do not already have one) form a tailmaw over 2 minutes. It acts on its own, with a mind only to pleasure the drinker as much as possible, latching and rubbing anything and everything it can.',
+					//35
+					'Potion of Cloning',
+					'Upon being drunk, the drinker will shortly have a clone of them appear. This clone knows every in-and-out of what the drinker likes, and acts to tease and use the drinker as much as possible. Modifications affect the number of clones and when they act.',
+					//36
+					'Potion of Quad',
+					'The drinker quickly becomes quadruped, losing the ability to stand on two legs. After some time, they also lose the ability to speak normal languages. Warning: This effect does not wear off normally.',
+					//37
+					'Potion of Pregnancy',
+					'The drinker experiences a false pregnancy, with its effects appearing and intensifying over 10 minutes, and lasting 2 hours. The drinker\'s belly will initally grow, then they will begin to produce a lot of milk while becoming increasingly horny and needy.',
 					
                 ];
 				let mods = [
@@ -160,12 +188,12 @@
 				document.getElementsByClassName('img1')[0].src = "img/pot/" + p + ".png";
                 document.getElementsByClassName('potionname')[0].innerText = potions[2*p | 0];
 				document.getElementsByClassName('potioneffect')[0].innerText = potions[2*p + 1 | 0];
-				if(p < 22|| p > 25)
+				if(!restricted(p))
 				{
 					if(Math.random() > .5)
 					{
 						let pp = Math.floor(Math.random() * (potions.length / 2))
-						if(pp == p || (pp < 25 && pp > 22))
+						if(pp == p || restricted(pp))
 						{
 											document.getElementsByClassName("pot2")[0].remove();
 											document.getElementsByClassName("pot3")[0].remove();
@@ -176,12 +204,12 @@
 						}
 						document.getElementsByClassName('potionname2')[0].innerText = potions[2*pp | 0];
 						document.getElementsByClassName('potioneffect2')[0].innerText = potions[2*pp + 1 | 0];
-						if(pp < 22 || pp > 25)
+						if(!restricted(pp))
 						{
 							if(Math.random() > .66666)
 					{
 						let ppp = Math.floor(Math.random() * (potions.length / 2))
-						if(ppp == pp || ppp == p || (ppp < 25 && ppp > 22))
+						if(ppp == pp || ppp == p || restricted(ppp))
 						{
 											document.getElementsByClassName("pot3")[0].remove();
 
@@ -191,12 +219,12 @@
 						}
 						document.getElementsByClassName('potionname3')[0].innerText = potions[2*ppp | 0];
 						document.getElementsByClassName('potioneffect3')[0].innerText = potions[2*ppp + 1 | 0];
-						if(ppp < 22 || ppp > 25)
+						if(!restricted(ppp))
 						{
 							if(Math.random() > .75)
 					{
 						let pppp = Math.floor(Math.random() * (potions.length / 2))
-						if(pppp == ppp || pppp == pp || pppp == p || (pppp < 22 && pppp > 25))
+						if(pppp == ppp || pppp == pp || pppp == p || restricted(pppp))
 						{
 											document.getElementsByClassName("pot4")[0].remove();
 
@@ -205,7 +233,7 @@
 						}
 						document.getElementsByClassName('potionname4')[0].innerText = potions[2*pppp | 0];
 						document.getElementsByClassName('potioneffect4')[0].innerText = potions[2*pppp + 1 | 0];
-						if(pppp < 22 || pppp > 25)
+						if(!restricted(pppp))
 						{
 							document.getElementsByClassName('mod')[0].innerText = mods[2*m | 0];
 							document.getElementsByClassName('modeffect')[0].innerText = mods[2*m + 1 | 0];
