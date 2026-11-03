@@ -103,6 +103,7 @@
 			'Oh here it goes, here it goes, here it goes again!',
 			'The existence of a Red Prince implies the existence of a Blue Pr- wait.',
 			'I want a 17.',
+					'this is the 67th ramble. how dubious',
 			'hey man! man!!!',
 			'guys you GOTTA stop this. who\'s on first',
 			'dm me about good time dragon!! i love it',
@@ -212,9 +213,16 @@
 			'wanna see me speedrun?',
 			'Fly, little bunny!',
 			'SORRY TO KEEP YOU WAITING',
-			
+			'Oh, here comes the savior!',
+			'Pitons, and Beans. Nothing more is needed.',
+			'WE ONLY HAVE ONE SHRINE LEFT!',
+			'I\'m lowkey evil....',
+			'just rollin rollin rollin rollin',
+			'Okay so imagine, right. Wait... you can\'t?',
+			'If I don\'t have a beat, then I can\'t dance. And ff I can\'t dance, then I\'m not having any fun. And if I\'m not having any fun, then no one is having any fun.',
                 ];
-                document.getElementsByClassName('flavour-text')[0].innerText = flavourTexts[(Math.random() * flavourTexts.length) | 0];
+				var ftex = (Math.random() * flavourTexts.length) | 0
+                document.getElementsByClassName('flavour-text')[0].innerText = "Maddy's Ramble #" + ftex + ": " + flavourTexts[ftex];
             });
 	</script>
 </head>
